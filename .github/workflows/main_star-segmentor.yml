@@ -5,9 +5,9 @@ name: Run Python app on Azure Web App - Star-Segmentor
 
 on:
  push:
- branches:
- - main
-  workflow_dispatch:
+   branches:
+     - main
+ workflow_dispatch:
     inputs:
       job-to-run:
         description: 'Job to run'
