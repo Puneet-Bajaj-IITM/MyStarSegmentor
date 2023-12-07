@@ -72,7 +72,7 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_46713733418A482298972F4904E04B6B }}
  
   run-app:
-    runs-on: deploy
+    runs-on: ubuntu-latest
     steps:
       - name: Execute
       - run: python /star-segmentor/app.py
