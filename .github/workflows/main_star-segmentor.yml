@@ -28,7 +28,10 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+         pip install -r requirements.txt
+         wget https://github.com/Puneet-Bajaj-IITM/image-segmentation/releases/download/v1.0.0/star-segmentor.zip
+         unzip -o star-segmentor.zip -d ${{ github.workspace }}
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -67,3 +70,9 @@ jobs:
           app-name: 'Star-Segmentor'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_46713733418A482298972F4904E04B6B }}
+ 
+  run-app:
+    runs-on: deploy
+    steps:
+      - name: Execute
+      - run: python /star-segmentor/app.py
