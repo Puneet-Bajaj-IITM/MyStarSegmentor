@@ -80,4 +80,7 @@ jobs:
     needs: deploy
     steps:
       - name: run-app
-        run: python /star-segmentor/app.py
+        run: |
+         ls
+         pwd
+         python star-segmentor/app.py
