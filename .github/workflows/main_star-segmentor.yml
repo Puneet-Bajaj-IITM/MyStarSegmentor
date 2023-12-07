@@ -75,4 +75,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute
-      - run: python /star-segmentor/app.py
+        run: python /star-segmentor/app.py
